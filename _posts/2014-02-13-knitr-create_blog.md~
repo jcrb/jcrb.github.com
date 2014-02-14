@@ -1,11 +1,3 @@
----
-layout: post
-title: "Créer un blog avec Knitr et Jekyll"
-description: ""
-category: 
-tags: []
----
-{% include JB/setup %}
 
 Créer un blog avec Knitr et Jekyll
 ==================================
