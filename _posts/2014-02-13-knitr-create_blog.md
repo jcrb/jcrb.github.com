@@ -2,13 +2,10 @@
 layout: post
 title: "Créer un blog avec Knitr et Jekyll"
 description: ""
-category: 
-tags: []
+category: r
+tags: [knitr, jekyll, tutorial]
 ---
 {% include JB/setup %}
-
-Créer un blog avec Knitr et Jekyll
-==================================
 
 Le package knitr package permet de créer facilement un post pour un site géré par Jekyll. Le seul élément nécessaire est un fichier source écrit avec R Markdown.
 Le nom de se fichier doit obligatoirement commencer par une date au format AAAA-mm-jj et se terminer par le suffixe Rmd.Les étapes sont les suivantes:
@@ -21,7 +18,7 @@ Etape 2
 -------
 
 Ouvrez une console R et saississez le source suivant
-
+```
 KnitPost <- function(input, base.url = "/") {
     require(knitr)
     opts_knit$set(base.url = base.url)
@@ -32,6 +29,7 @@ KnitPost <- function(input, base.url = "/") {
     knit(input, envir = parent.frame())
 }
 KnitPost("2012-07-03-knitr-jekyll.Rmd")
+```
 
 Etape 3
 --------
@@ -58,11 +56,11 @@ cd Documents/Blog/Blog$ cd CreateBlog/jcrb.github.com
 ~/Documents/Blog/jcrb.github.com$ git add .
 ~/Documents/Blog/jcrb.github.com$ git commit -m "add new content"
 ~/Documents/Blog/jcrb.github.com$ git push origin master
-$ 
 ```
 
 source
 ------
 http://jfisher-usgs.github.io/r/2012/07/03/knitr-jekyll/, Blog with Knitr and Jekyll
 Published: 2012-07-03 par Jason C Fisher
+
 
