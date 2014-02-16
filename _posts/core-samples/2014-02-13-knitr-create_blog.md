@@ -52,9 +52,16 @@ Etape 5
 -------
 en mode console, mettre à jour le blog:
 ```
-cd Documents/Blog/Blog$ cd CreateBlog/jcrb.github.com
+~$ cd Documents/Blog/jcrb.github.com
 ~/Documents/Blog/jcrb.github.com$ git add .
 ~/Documents/Blog/jcrb.github.com$ git commit -m "add new content"
+```
+tester en local:
+```
+~/Documents/Blog/jcrb.github.com$ jekyll serve
+```
+Puis pousser sur GitHub:
+```
 ~/Documents/Blog/jcrb.github.com$ git push origin master
 ```
 

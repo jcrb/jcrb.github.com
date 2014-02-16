@@ -12,7 +12,7 @@ Le nom de se fichier doit obligatoirement commencer par une date au format AAAA-
 
 Etape 1
 -------
-Créer un blog avec Jekyll-Boostrap si vous n'en possédez pas. Un tutoriel succint est disponible (ici)[http://jfisher-usgs.github.com/lessons/2012/05/30/jekyll-build-on-windows/]
+Créer un blog avec Jekyll-Boostrap si vous n'en possédez pas. Un tutoriel succint est disponible [ici](http://jfisher-usgs.github.com/lessons/2012/05/30/jekyll-build-on-windows/)
 
 Etape 2
 -------
@@ -52,7 +52,7 @@ Etape 5
 -------
 en mode console, mettre à jour le blog:
 ```
-cd Documents/Blog/Blog$ cd CreateBlog/jcrb.github.com
+~$ cd Documents/Blog/jcrb.github.com
 ~/Documents/Blog/jcrb.github.com$ git add .
 ~/Documents/Blog/jcrb.github.com$ git commit -m "add new content"
 ~/Documents/Blog/jcrb.github.com$ git push origin master
