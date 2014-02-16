@@ -67,7 +67,7 @@ Puis pousser sur GitHub:
 
 source
 ------
-http://jfisher-usgs.github.io/r/2012/07/03/knitr-jekyll/, Blog with Knitr and Jekyll
+[Blog with Knitr and Jekyll](http://jfisher-usgs.github.io/r/2012/07/03/knitr-jekyll/), 
 Published: 2012-07-03 par Jason C Fisher
 
 
