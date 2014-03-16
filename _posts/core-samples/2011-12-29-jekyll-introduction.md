@@ -6,42 +6,39 @@ tags : [intro, beginner, jekyll, tutorial]
 ---
 {% include JB/setup %}
 
-This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
-Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
+Cette introduction Jekyll décrit exactement ce que Jekyll est et pourquoi vous voudrez l'utiliser.
+Immédiatement après l'introduction, nous allons apprendre exactement comment Jekyll fait ce qu'il fait.
 
-## Overview
+## Vue d'ensemble
 
-### What is Jekyll?
+### Qu'est-ce Jekyll?
 
-Jekyll is a parsing engine bundled as a ruby gem used to build static websites from
-dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".
+
+Jekyll est un parseur en ruby (gem) utilisé pour construire des sites Web statiques à partir d'éléments dynamiques tels que les modèles, partials, liquid code, markdown, etc. Jekyll est connu comme "un simple blog, générateur de site statique".
 
 ### Examples
 
-This website is created with Jekyll. [Other Jekyll websites](https://github.com/mojombo/jekyll/wiki/Sites).
+Ce site est créé avec Jekyll. [Other Jekyll websites](https://github.com/mojombo/jekyll/wiki/Sites).
 
 
 
-### What does Jekyll Do?
+### Que fait Jekyl?
 
-Jekyll is a ruby gem you install on your local system.
-Once there you can call `jekyll --server` on a directory and provided that directory
-is setup in a way jekyll expects, it will do magic stuff like parse markdown/textile files,
-compute categories, tags, permalinks, and construct your pages from layout templates and partials.
+Jekyll est un gem ruby que vous intallez sur votre système local.
+Une fois là, vous pouvez appeler `jekyll --server` sur un répertoire et à condition que ce répertoire soit formatté comme Jekyll l'attend, il va faire des choses magiques somme parser des fichiers Markdown/text, créer des catégories, des tags, des liens et , construire vos pages à partir de modèles de mise en page et partials.
 
-Once parsed, Jekyll stores the result in a self-contained static `_site` folder.
-The intention here is that you can serve all contents in this folder statically from a plain static web-server.
+Une fois parsés, Jekyll stocke le résultat dans un dossier autonome statique `_site`.
+L'intention ici est que vous pouvez servir tous les contenus de ce dossier de manière statique à partir d'un serveur web statique.
 
-You can think of Jekyll as a normalish dynamic blog but rather than parsing content, templates, and tags
-on each request, Jekyll does this once _beforehand_ and caches the _entire website_ in a folder for serving statically.
+Vous pouvez penser Jekyll comme un blog dynamique normal mais plutôt que d'analyser le contenu à chaque demande, Jekyll fait cela une fois _à priori_ et met en cache la _totalité du site web_ dans un dossier pour le produire de manière statique.
 
-### Jekyll is Not Blogging Software
+### Jekyll n'est pas un logiciel de Blog
 
-**Jekyll is a parsing engine.**
+**Jekyll est un parseur.**
 
-Jekyll does not come with any content nor does it have any templates or design elements.
-This is a common source of confusion when getting started.
-Jekyll does not come with anything you actually use or see on your website - you have to make it.
+Jekyll ne fournit pas de contenu et n'a pas non plus tous les modèles ou éléments de conception.
+C'est une source fréquente de confusion au début.
+Jekyll ne vient pas avec tout ce que vous utilisez ou voyez sur votre site web - c'est à vous de le faire.
 
 ### Why Should I Care?
 
@@ -52,36 +49,35 @@ Heavily trafficked dynamic blogs must employ a caching layer that ultimately per
 
 Therefore if you like to keep things simple and you prefer the command-line over an admin panel UI then give Jekyll a try.
 
-**Developers like Jekyll because we can write content like we write code:**
+**Développeurs comme Jekyll parce que nous voulons écrire du contenu comme nous écrivons du code:**
 
-- Ability to write content in markdown or textile in your favorite text-editor.
-- Ability to write and preview your content via localhost.
-- No internet connection required.
-- Ability to publish via git.
-- Ability to host your blog on a static web-server.
-- Ability to host freely on GitHub Pages.
-- No database required.
+- Possibilité d'écrire du contenu en markdown ou textile dans votre éditeur de texte favori. 
+- Possibilité d'écrire et prévisualiser votre contenu via localhost. 
+- Pas de connexion Internet nécessaire.
+- Possibilité de publier via git.
+- Possibilité d'héberger votre blog sur un serveur web statique.
+- Possibilité d'héberger sur GitHub.
+- Pas de base de données requise.
 
-# How Jekyll Works
+# Comment Jekyll fonctionne
 
-The following is a complete but concise outline of exactly how Jekyll works.
+Ce qui suit est un aperçu complet mais concis de comment fonctionne exactement Jekyll.
 
-Be aware that core concepts are introduced in rapid succession without code examples.
-This information is not intended to specifically teach you how to do anything, rather it
-is intended to give you the _full picture_ relative to what is going on in Jekyll-world.
+Soyez conscient que les concepts de base sont introduits en succession rapide sans exemples de code.
+Cette information n'est pas destinée à vous apprendre précisément comment faire quelque chose, mais plutôt
+est destiné à vous donner une _Image complète_ de ce qui se passe dans le monde de Jekyll.
 
-Learning these core concepts should help you avoid common frustrations and ultimately
-help you better understand the code examples contained throughout Jekyll-Bootstrap.
+L'apprentissage de ces concepts de base devrait vous aider à éviter les frustrations communes et, finalement,vous aider à mieux comprendre les exemples de code contenus tout au long de Jekyll-Bootstrap.
 
 
-## Initial Setup
+## Configuration initiale
 
-After [installing jekyll](/index.html#start-now) you'll need to format your website directory in a way jekyll expects.
-Jekyll-bootstrap conveniently provides the base directory format.
+Après avoir [installé jekyll](/index.html#start-now) vous devez formater votre répertoire comme jekyll l'attend.
+Jekyll-bootstrap fournit le répertoire de base.
 
-### The Jekyll Application Base Format
+### La strucyure de base de l'application Jekyll
 
-Jekyll expects your website directory to be laid out like so:
+Jekyll s'attend à ce que le répertoire de base soit présenté de la manière suivante:
 
     .
     |-- _config.yml
@@ -101,33 +97,33 @@ Jekyll expects your website directory to be laid out like so:
 
 
 - **\_config.yml**
-	Stores configuration data.
+	Stocke les données de configuration.
 
 - **\_includes**
-	This folder is for partial views.
+	Ce répertoire est destiné aux partial views.
 
 - **\_layouts**
-	This folder is for the main templates your content will be inserted into.
-	You can have different layouts for different pages or page sections.
-
+	Ce répertoire est pour les principaux modèles utilisés par votre contenu.
+	Vous pouvez avoir des configurations différentes pour vos pages et sections.
+	
 - **\_posts**
-	This folder contains your dynamic content/posts.
-	the naming format is required to be `@YEAR-MONTH-DATE-title.MARKUP@`.
+	Ce répertoire contient votre contenu dynamique/posts.
+	Le nom du fichier doit respecter le formalisme `@YEAR-MONTH-DATE-title.MARKUP@`.
 
 - **\_site**
-	This is where the generated site will be placed once Jekyll is done transforming it.
+	C'est là que le site généré sera placé une fois que Jekyll l'a transformé.
 
 - **assets**
-	This folder is not part of the standard jekyll structure.
-	The assets folder represents _any generic_ folder you happen to create in your root directory.
-	Directories and files not properly formatted for jekyll will be left untouched for you to serve normally.
+	Ce dossier ne fait pas partie de la structure standard de jekyll ..
+	Le dossier assets représente _tout dossier générique_ que vous voulez créer dans votre répertoire racine.
+	Les répertoires et les fichiers non correctement formatées pour jekyll seront laissés intacts pour votre usage.
 
 (read more: <https://github.com/mojombo/jekyll/wiki/Usage>)
 
 
 ### Jekyll Configuration
 
-Jekyll supports various configuration options that are fully outlined here:
+Jekyll prend en charge diverses options de configuration qui sont entièrement décrits ici:
 (<https://github.com/mojombo/jekyll/wiki/Configuration>)
 
 
@@ -135,24 +131,26 @@ Jekyll supports various configuration options that are fully outlined here:
 
 ## Content in Jekyll
 
-Content in Jekyll is either a post or a page.
-These content "objects" get inserted into one or more templates to build the final output for its respective static-page.
+Le contenu dans Jekyll est un article ou une page. 
+Ces "objects" sont insérés dans un ou plusieurs templates pour construire la page statique qui sera affichée.
 
-### Posts and Pages
+### Posts et Pages
 
-Both posts and pages should be written in markdown, textile, or HTML and may also contain Liquid templating syntax.
-Both posts and pages can have meta-data assigned on a per-page basis such as title, url path, as well as arbitrary custom meta-data.
+Posts et pages doivent être écrits en markdown, textile, ou HTML and peuvent aussi contenir des modèles utilisant la syntaxe Liquid.
+Posts et pages peuvent avoir des meta-data requises à chaque page comme title, url path, comme des meta-data personnelles.
 
-### Working With Posts
+### Travailler avec les Posts
 
-**Creating a Post**
-Posts are created by properly formatting a file and placing it the `_posts` folder.
+**Créer un Post**
+Les Posts sont créés en formattant correctement un fichier qui est ensuite placé dans le répertoire `_posts`.
 
-**Formatting**
-A post must have a valid filename in the form `YEAR-MONTH-DATE-title.MARKUP` and be placed in the `_posts` directory.
-If the data format is invalid Jekyll will not recognize the file as a post. The date and title are automatically parsed from the filename of the post file.
-Additionally, each file must have [YAML Front-Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) prepended to its content.
-YAML Front-Matter is a valid YAML syntax specifying meta-data for the given file.
+**Formattage**
+Un post doit avoir un nom de fichier valide de la forme `ANNEE-MOIS-DATE-titre.MARKUP` et doit être placé dans le répertoire `_posts`.
+
+Si le format est nvalide Jekyll ne reconnait pas le fichier comme étant un post. La date et le titre sont automatiquement parsés à partir du fichier source du Post.
+
+De plus chaque fichier doit avoir une [en-tête YAML](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) placée avant son contenu.
+L'en-tête YAML est une syntaxe YAML spécifiant les meta-data pour un fichier donné.
 
 **Order**
 Ordering is an important part of Jekyll but it is hard to specify a custom ordering strategy.
